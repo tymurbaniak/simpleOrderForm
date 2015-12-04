@@ -30,18 +30,21 @@ $table = read_data_from_database();
 function read_data_from_database(){
 	require('serverconf.php');
 	$link = mysqli_connect($adresserwera, $nazwauzyt, $haslo, $nazwabd);
-
-			$zapytanie = "SELECT * FROM `order` WHERE 1";
+			$forordkey=$_POST['forordkey'];
+			echo $forordkey;
+			$zapytanie = "SELECT * FROM `product` WHERE product_forordkey='".$forordkey."'";
 
 			$wynik_zapytania = mysqli_query($link, $zapytanie);
 			echo mysqli_connect_error();
 			
 			echo "<center><table>";
+			echo "<tr><th>Nazwa</th><th>Ilość</th><th>Cena</th></tr>";
 			while($row=mysqli_fetch_array($wynik_zapytania,MYSQLI_ASSOC)){
 			
-			echo "<tr><td>".$row["order_id"]."</td><td>".$row["order_fname"]."</td><td>".$row["order_lname"]."</td><td>";
-			echo "<form method='POST' action='showdetails.php'><input name='forordkey' type='hidden' value='".$row["order_id"]."'><input type='submit' value='Pokaż szczegóły'></form>";
+			echo "<tr><td>".$row["product_pname"]."</td><td>".$row["product_quantity"]."</td><td><input value=".$row["product_price"]."></td></tr>";
+			echo "\n";
 			}
+			echo "<tr><td><input type='submit' value='Zapisz ceny'></td><td></td><td></td></tr>";
 			echo "</table></center>";
 			
 			echo count($row);

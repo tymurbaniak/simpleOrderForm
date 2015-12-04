@@ -24,7 +24,7 @@ function send_data_to_database(){
 		
 	$foreignkey = $link->insert_id;
 	echo $foreignkey;
-		for($incr=1; $incr<12; $incr++){
+		for($incr=1; $incr<13; $incr++){
 			$qcounter = "quantity".$incr;
 			$ncounter = "name".$incr;
 			$quantity = $_POST[$qcounter];
