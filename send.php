@@ -19,7 +19,7 @@ function send_data_to_database(){
 		echo "Nie dodano<br>";
 		return 'Nie dzia³a :o';
 	}else{
-		echo "Dodano rekord do bazy";
+		//echo "Dodano rekord do bazy";
 	} 
 		
 	$foreignkey = $link->insert_id;
@@ -33,8 +33,8 @@ function send_data_to_database(){
 			INSERT INTO product (product_id, product_pname, product_quantity, product_price, product_forordkey) 
 			VALUES (NULL, '".$name."','".$quantity."', '', '".$foreignkey."');
 			";
-			echo $zapytanie_produkt. "<br>";
-			echo $name." ".$quantity." ".$foreignkey."<br>";
+			//uncomment for debuging echo $zapytanie_produkt. "<br>";
+			//uncomment for debuging echo $name." ".$quantity." ".$foreignkey."<br>";
 			
 			$wynik_zapytania = mysqli_query($link, $zapytanie_produkt);
 			echo mysqli_connect_error();
@@ -43,9 +43,10 @@ function send_data_to_database(){
 				echo "Nie dodano<br>";
 				return 'Nie dzia³a :o';
 			}else{
-				echo "Dodano rekord do bazy";
+				//echo "Dodano rekord do bazy";
 			} 
 		}
+	echo "<center><h1>Wys³ano zamówienie</h1><br><h2><a href='index.html'>Powrót do strony sk³adania zamówieñ</a></center>";
 		
 
 	if(!mysqli_close($link)) {return 'Problem z zamknieciem bazy';}

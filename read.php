@@ -36,10 +36,17 @@ function read_data_from_database(){
 			$wynik_zapytania = mysqli_query($link, $zapytanie);
 			echo mysqli_connect_error();
 			
+			
+			
 			echo "<center><table>";
+			echo "<tr><th>Data zamówienia</th><th>Imię</th><th>Nazwisko</th><th>Koszt</th><th></th>";
 			while($row=mysqli_fetch_array($wynik_zapytania,MYSQLI_ASSOC)){
 			
-			echo "<tr><td>".$row["order_id"]."</td><td>".$row["order_fname"]."</td><td>".$row["order_lname"]."</td><td>";
+			$zapytanie_suma = "SELECT SUM(product_price) AS cost FROM product WHERE product_forordkey = '".$row["order_id"]."';";
+			$koszt = mysqli_query($link, $zapytanie_suma);
+			$row2=mysqli_fetch_array($koszt, MYSQLI_ASSOC);
+			
+			echo "<tr><td>".$row["order_date"]."</td><td>".$row["order_fname"]."</td><td>".$row["order_lname"]."</td><td>".$row2["cost"]."</td><td>";
 			echo "<form method='POST' action='showdetails.php'><input name='forordkey' type='hidden' value='".$row["order_id"]."'><input type='submit' value='Pokaż szczegóły'></form>";
 			}
 			echo "</table></center>";
