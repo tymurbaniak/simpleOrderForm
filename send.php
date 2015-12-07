@@ -23,7 +23,7 @@ function send_data_to_database(){
 	} 
 		
 	$foreignkey = $link->insert_id;
-	echo $foreignkey;
+	//echo $foreignkey;
 		for($incr=1; $incr<13; $incr++){
 			$qcounter = "quantity".$incr;
 			$ncounter = "name".$incr;
@@ -46,7 +46,9 @@ function send_data_to_database(){
 				//echo "Dodano rekord do bazy";
 			} 
 		}
-	echo "<center><h1>Wys³ano zamówienie</h1><br><h2><a href='index.html'>Powrót do strony sk³adania zamówieñ</a></center>";
+	echo "<center><h1>Wys³ano zamówienie</h1><br><h2><a href='index.html'>Powrót do strony sk³adania zamówieñ</a><br>
+			<form method='POST' action='print.php'><input type='submit' value='Zobacz i wydrukuj zamówienie'>
+			<input type='hidden' name='forordkey' value='".$foreignkey."'></form></center>";
 		
 
 	if(!mysqli_close($link)) {return 'Problem z zamknieciem bazy';}

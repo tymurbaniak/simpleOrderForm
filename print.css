@@ -1,0 +1,89 @@
+body{
+	margin: 20mm, 8mm, 20mm;
+	font-size: 12px;
+	
+}
+
+#headertable{
+	width: 170mm;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 12px;
+	border-collapse: collapse;
+}
+#headertable td{
+	border: 1px solid black;
+}
+
+#datatable{
+	margin-top: 8mm;
+	margin-bottom: 4mm;
+	width: 170mm;
+	font-family: calibri;
+	
+}
+#jednostkadane{
+	text-align: left;
+}
+#datadane{
+	text-align: right;
+}
+
+#logo{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+#logotd{
+	width: 43mm;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+#zapotrzebowanie{
+	width: 127mm;
+	
+}
+
+#zapotrzebowanie.td{
+		
+}
+.lptd{
+	width: 10mm;
+	text-align: center;
+}
+
+.iltd{
+	width: 15mm;
+	text-align: center;
+	height: 6mm;
+}
+.contenttable{
+width:170mm;
+font-size: 12px;
+border-collapse: collapse;
+border: 1px solid black;
+font-family: calibri;
+}
+
+.contenttable td, th{
+border: 1px solid black;
+}
+#logo{
+	width: 48mm;
+}
+
+.footer{
+	margin-top: 3mm;
+	width: 170mm;
+	font-size: 16px;
+	text-align: justify;
+	font-family: calibri;
+}
+
+.sealfoot {
+	margin-top: 8mm;
+	width: 170mm;
+	text-align: left;
+	font-family: calibri;
+}
