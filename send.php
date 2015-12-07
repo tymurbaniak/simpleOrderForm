@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 
 send_data_to_database();
 
@@ -17,7 +17,7 @@ function send_data_to_database(){
 			
 	if(mysqli_connect_errno()) { 
 		echo "Nie dodano<br>";
-		return 'Nie dzia≥a :o';
+		return 'Nie dzia≈Ça :o';
 	}else{
 		//echo "Dodano rekord do bazy";
 	} 
@@ -41,13 +41,13 @@ function send_data_to_database(){
 			
 			if(mysqli_connect_errno()) { 
 				echo "Nie dodano<br>";
-				return 'Nie dzia≥a :o';
+				return 'Nie dzia≈Ça :o';
 			}else{
 				//echo "Dodano rekord do bazy";
 			} 
 		}
-	echo "<center><h1>Wys≥ano zamÛwienie</h1><br><h2><a href='index.html'>PowrÛt do strony sk≥adania zamÛwieÒ</a><br>
-			<form method='POST' action='print.php'><input type='submit' value='Zobacz i wydrukuj zamÛwienie'>
+	echo "<center><h1>Wys≈Çano zam√≥wienie</h1><br><h2><a href='index.html'>Powr√≥t do strony sk≈Çadania zam√≥wie≈Ñ</a><br>
+			<form method='POST' action='print.php'><input type='submit' value='Zobacz i wydrukuj zam√≥wienie'>
 			<input type='hidden' name='forordkey' value='".$foreignkey."'></form></center>";
 		
 
