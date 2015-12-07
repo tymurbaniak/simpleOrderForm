@@ -42,7 +42,7 @@ function read_data_from_database(){
 			echo "<tr><th>Data zamówienia</th><th>Imię</th><th>Nazwisko</th><th>Koszt</th><th></th>";
 			while($row=mysqli_fetch_array($wynik_zapytania,MYSQLI_ASSOC)){
 			
-			$zapytanie_suma = "SELECT SUM(product_price) AS cost FROM product WHERE product_forordkey = '".$row["order_id"]."';";
+			$zapytanie_suma = "SELECT SUM(product_cost) AS cost FROM product WHERE product_forordkey = '".$row["order_id"]."';";
 			$koszt = mysqli_query($link, $zapytanie_suma);
 			$row2=mysqli_fetch_array($koszt, MYSQLI_ASSOC);
 			
@@ -51,14 +51,14 @@ function read_data_from_database(){
 			}
 			echo "</table></center>";
 			
-			echo count($row);
+			//echo count($row);
 			mysqli_free_result($wynik_zapytania);
 			
 			if(mysqli_connect_errno()) { 
 				echo "Nie dodano<br>";
 				return 'Nie działa :o';
 			}else{
-				echo "Wczytano dane z bazy";
+				//echo "Wczytano dane z bazy";
 			} 
 		
 	if(!mysqli_close($link)) {return 'Problem z zamknieciem bazy';}
