@@ -23,6 +23,14 @@
 
 	<header>
 		<div id="slogan"><center><h1>Strona do składania i wydruku zamówień</h1></center></div>
+		
+		<div id="attention" style="color: #dd0000;"><center><h1>
+		UWAGA!</br></h1>
+		<h3>Wpisując produkt, który trzeba zamówić w polę nazwa wpisujemy jednostkę miary w jakim dany produkt występuje!<br>
+		Np. w przypadku syropu należy wpisać w pole NAZWA: "Syrop owocowy 5L", a w polę ilość należy wpisać np. "3", jeżeli chcemy zamówić 3 5-litrowe butelki syropu.<br>
+		W przypadku płynów kupowanych na litry lub produktów kupowanych na wagę, w pole NAZWA należy wpisać nazwę produktu i jednostkę<br>
+		Np. "Olej napędowy L" i wtedy w pole ilość wpisujemy ilość litrów danego płynu lub wagę zamawianego produktu. 
+		</h3></center></div>
 	</header>
 
 	<section class="container">
@@ -30,20 +38,21 @@
 			<form method="POST" action="send.php">
 				<table>
 					<tr><th>Nazwa</th><th>Ilość</th></tr>
-					<tr><td><input type="text" name="name1"></input></td><td><input type="text" name="quantity1"></input></td></tr>
-					<tr><td><input type="text" name="name2"></input></td><td><input type="text" name="quantity2"></input></td></tr>
-					<tr><td><input type="text" name="name3"></input></td><td><input type="text" name="quantity3"></input></td></tr>
-					<tr><td><input type="text" name="name4"></input></td><td><input type="text" name="quantity4"></input></td></tr>
-					<tr><td><input type="text" name="name5"></input></td><td><input type="text" name="quantity5"></input></td></tr>
-					<tr><td><input type="text" name="name6"></input></td><td><input type="text" name="quantity6"></input></td></tr>
-					<tr><td><input type="text" name="name7"></input></td><td><input type="text" name="quantity7"></input></td></tr>
-					<tr><td><input type="text" name="name8"></input></td><td><input type="text" name="quantity8"></input></td></tr>
-					<tr><td><input type="text" name="name9"></input></td><td><input type="text" name="quantity9"></input></td></tr>
-					<tr><td><input type="text" name="name10"></input></td><td><input type="text" name="quantity10"></input></td></tr>
-					<tr><td><input type="text" name="name11"></input></td><td><input type="text" name="quantity11"></input></td></tr>
-					<tr><td><input type="text" name="name12"></input></td><td><input type="text" name="quantity12"></input></td></tr>
+					<tr><td><input type="text" name="name1"></input></td><td><input type="text" name="quantity1" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name2"></input></td><td><input type="text" name="quantity2" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name3"></input></td><td><input type="text" name="quantity3" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name4"></input></td><td><input type="text" name="quantity4" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name5"></input></td><td><input type="text" name="quantity5" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name6"></input></td><td><input type="text" name="quantity6" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name7"></input></td><td><input type="text" name="quantity7" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name8"></input></td><td><input type="text" name="quantity8" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name9"></input></td><td><input type="text" name="quantity9" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name10"></input></td><td><input type="text" name="quantity10" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name11"></input></td><td><input type="text" name="quantity11" value="1"></input></td></tr>
+					<tr><td><input type="text" name="name12"></input></td><td><input type="text" name="quantity12" value="1"></input></td></tr>
 					<tr><th>Wpisujący:</th><th></th></tr>
-					<tr><td><input type="text" name="writersName"></input></td><td><input type="text" name="writersLName"></input></td></tr>
+					<tr><td>Imię: <input type="text" name="writersName" placeholder="Imię"></input>
+					</td><td>Nazwisko: <input type="text" name="writersLName" placeholder="Nazwisko"></input></td></tr>
 				</table>
 				
 				<input type="submit" value="Wyślij">
