@@ -33,19 +33,19 @@ function read_data_from_database(){
 	require('serverconf.php');
 	$link = mysqli_connect($adresserwera, $nazwauzyt, $haslo, $nazwabd);
 			$forordkey=$_POST['forordkey'];
-			echo $forordkey;
+			//debuging echo $forordkey;
 			$zapytanie = "DELETE FROM `product` WHERE `product_forordkey` = '$forordkey';";
 			$wynik_zapytania1 = mysqli_query($link, $zapytanie);
 			$zapytanie = "DELETE FROM `order` WHERE `order_id` = '$forordkey';";
 			$wynik_zapytania2 = mysqli_query($link, $zapytanie);
 			echo mysqli_connect_error();
-			echo "<br>".$wynik_zapytania1."  ".$wynik_zapytania2."<br><br>";
+			//debuging echo "<br>".$wynik_zapytania1."  ".$wynik_zapytania2."<br><br>";
 			if($wynik_zapytania1 && $wynik_zapytania2){
-				echo "<h1>Zamówienie usunięto</h1><br>";
-				echo "<a href='read.php'>Powrót do listy zamówień</a>";
+				echo "<center><h1>Zamówienie usunięto</h1><br>";
+				echo "<a href='read.php'>Powrót do listy zamówień</a></center>";
 			}else{
-				echo "<h1>Nie udało się usunąć zamówienia</h1>". mysqli_error($link)."<br>";
-				echo "<a href='read.php'>Powrót do listy zamówień</a>";
+				echo "<center><h1>Nie udało się usunąć zamówienia</h1>". mysqli_error($link)."<br>";
+				echo "<a href='read.php'>Powrót do listy zamówień</a></center>";
 			}
 			
 			if(mysqli_connect_errno()) { 
