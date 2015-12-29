@@ -53,8 +53,12 @@ function read_data_from_database(){
 			}
 			echo "<input type='hidden' value='".$forordkey."' name='forordkey'>";
 			echo "<tr><td></td><td></td><td><h3>Łączny koszt <br>zamówienia: ".$sum." </h3></td></tr>";
-			echo "<tr><td><input type='submit' value='Zapisz ceny'></td><td><a href='read.php'>Powrót do listy</a></td><td></td></tr>";
-			echo "</table></form></center>";
+			echo "<tr><td><input type='submit' value='Zapisz ceny'></form></td>
+			<td><a href='read.php'>Powrót do listy</a></td>
+			<td><form action='delete.php' method='POST'>
+			<input type='hidden' name='forordkey' value='".$forordkey."'>
+			<input type='submit' value='Usuń zamówienie'></form></td></tr>";
+			echo "</table></center>";
 			
 			//echo count($row);
 			mysqli_free_result($wynik_zapytania);
